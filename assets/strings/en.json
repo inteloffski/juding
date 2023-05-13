@@ -1,0 +1,32 @@
+{
+  "app_name": "MMA DAO promotion ",
+  "next_button": "Next",
+  "create_new_wallet_screen": {
+    "create":"Create new wallet",
+    "restore": "Restore wallet"
+  },
+  "generate_seed_screen": {
+    "title":"New wallet",
+    "subtitle": "Write down and store somewhere safe \nthese 12 words. You will need them \nto access the wallet"
+  },
+  "generate_seed_confirm_screen": {
+    "title":"Let's Check!",
+    "subtitle": "Enter 12 words from previous screen",
+    "invalid_sid": "Invalid sid"
+  },
+  "pin_code_screen": {
+    "title": "Create pin code"
+  },
+  "pin_code_confirm_screen": {
+    "title": "Repeat pin code",
+    "error": "Password mismatch"
+  },
+  "login_screen": {
+    "title": "Enter password",
+    "invalid_password": "Invalid password"
+  },
+  "restore_screen": {
+    "title": "Enter 12 words you received after registration",
+    "invalid_seed": "Seed phrase is incorrect, check it"
+  }
+}

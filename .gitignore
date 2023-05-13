@@ -31,6 +31,10 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+# Exclude codegen files
+**/*.g.dart
+**/*.config.dart
+**/*.freezed.dart
 
 # Symbolication related
 app.*.symbols
@@ -42,3 +46,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+/ios/Podfile.lock
+/android/app/release/app-release.aab
+/android/app/release/app-release.apk
+/android/app/release/output.json
+launch.json
+.fvm/flutter_sdk
+.fvm/fvm_config.json
