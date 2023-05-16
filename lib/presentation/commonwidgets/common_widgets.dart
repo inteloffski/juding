@@ -4,14 +4,12 @@ import 'package:flutter_svg/svg.dart';
 class NftAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarTitle;
   final Color backgroundColor;
-  final String pathToIcon;
   final bool automaticallyImplyLeading;
 
   const NftAppBar({
     super.key,
     required this.appBarTitle,
     this.backgroundColor = Colors.transparent,
-    this.pathToIcon = 'assets/ic_notification.svg',
     this.automaticallyImplyLeading = true
   });
 
@@ -27,16 +25,7 @@ class NftAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         centerTitle: false,
         leading: visibleBackArrow(automaticallyImplyLeading, context),
-
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: IconButton(
-              icon: SvgPicture.asset(pathToIcon),
-              onPressed: null,
-            ),
-          )
-        ]);
+    );
   }
 
   @override

@@ -28,5 +28,9 @@
   "restore_screen": {
     "title": "Enter 12 words you received after registration",
     "invalid_seed": "Seed phrase is incorrect, check it"
+  },
+  "choose_role_screen": {
+    "role_judging": "judging",
+    "role_candidate": "candidate"
   }
 }

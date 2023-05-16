@@ -1,5 +1,7 @@
 abstract class NewWalletGenerateDataSource {
 
+  String? get privateKey;
+
   Future<List<String>> generateBip39();
 
   Future<String> fetchPrivateKey(String mnemonic);

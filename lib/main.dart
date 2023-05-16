@@ -1,11 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:juding/di/service_locator.dart';
+import 'package:juding/presentation/chooserole/nft_empty_screen/bloc/mint_screen.dart';
 import 'package:juding/presentation/login/login_keyboard.dart';
 import 'package:juding/presentation/login/login_screen.dart';
 import 'package:juding/presentation/registerwallet/create_new_wallet_screen.dart';
 import 'package:juding/presentation/registerwallet/pin/pin_code_screen.dart';
-import 'package:juding/presentation/registerwallet/pin/pin_code_success_screen.dart';
+import 'package:juding/presentation/chooserole/choose_role_screen.dart';
 import 'package:juding/presentation/registerwallet/pin/pincodeconfirm/pin_code_confirm_screen.dart';
 import 'package:juding/presentation/registerwallet/twentywordsconfirm/twenty_words_confirm_screen.dart';
 import 'package:juding/presentation/registerwallet/twentywords/twenty_words_screen.dart';
@@ -48,7 +49,8 @@ class NamedRouter extends StatelessWidget {
             const PinCodeScreen(),
         '/twentyWords/twentyWordsConfirm/pinCode/pinCodeConfirm': (context) =>
             PinCodeConfirmScreen(),
-        '/pinCodeConfirmSuccess': (context) => const PinCodeSuccessScreen(),
+        '/pinCodeConfirmSuccess': (context) => const ChooseRoleScreen(),
+        '/mintScreen': (context) => MintScreen(),
         // //navigation flow restore wallet
         '/restoreScreen': (context) => const RestoreScreen(),
         // '/bottomNavigationShopScreen': (context) => RoleChooseScreen(),

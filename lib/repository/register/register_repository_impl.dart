@@ -1,7 +1,7 @@
-import 'package:juding/repository/register_repository.dart';
+import 'package:juding/repository/register/register_repository.dart';
 
-import '../datasource/local_storage_data_source.dart';
-import '../datasource/new_wallet_generate_datasource.dart';
+import '../../datasource/localstorage/local_storage_data_source.dart';
+import '../../datasource/newwallet/new_wallet_generate_datasource.dart';
 
 class RegisterRepositoryImpl implements RegisterRepository {
   final NewWalletGenerateDataSource newWalletGenerateDataSource;
@@ -16,8 +16,8 @@ class RegisterRepositoryImpl implements RegisterRepository {
   Future<void> registerNewWallet(String key, String mnemonic) async {
     final privateKey =
         await newWalletGenerateDataSource.fetchPrivateKey(mnemonic);
-    final address = newWalletGenerateDataSource.fetchAddressWallet(privateKey);
-    localStorageDataSource.writeSeedToLocalStorage(key, address);
+    newWalletGenerateDataSource.fetchAddressWallet(privateKey);
+    localStorageDataSource.writeSeedToLocalStorage(key, mnemonic);
   }
 
   @override
