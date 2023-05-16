@@ -30,7 +30,8 @@
     "invalid_seed": "Seed phrase is incorrect, check it"
   },
   "choose_role_screen": {
-    "role_judging": "judging",
-    "role_candidate": "candidate"
+    "role_fighter": "fighter",
+    "role_fan": "fan",
+    "role_judge": "judge"
   }
 }

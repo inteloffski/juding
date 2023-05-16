@@ -23,13 +23,13 @@ class LoadingChooseState extends ChooseRoleState {
 }
 
 class SuccessChooseState extends ChooseRoleState {
-  final NftsMoralisDto userTokens;
+  final String role;
 
-  const SuccessChooseState(this.userTokens);
+  const SuccessChooseState(this.role);
 
   @override
   // TODO: implement props
-  List<Object?> get props => [userTokens];
+  List<Object?> get props => [role];
 
 }
 
@@ -51,7 +51,7 @@ class ErrorChooseState extends ChooseRoleState {
 }
 
 class RefreshAfterMintingSuccessState extends ChooseRoleState {
-  final int role;
+  final String role;
 
   const RefreshAfterMintingSuccessState({required this.role});
 

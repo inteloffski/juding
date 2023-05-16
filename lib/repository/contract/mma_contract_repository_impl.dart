@@ -16,7 +16,7 @@ class MmaContractRepositoryImpl extends MmaContractRepository {
   }
 
   @override
-  Future<String> cardInfo(int tokenId) async {
+  Future<List<dynamic>> cardInfo(int tokenId) async {
     return await mmaContractDataSource.cardInfo(sessionRepository.privateKey!, tokenId);
   }
 

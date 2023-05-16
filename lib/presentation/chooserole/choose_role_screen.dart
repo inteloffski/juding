@@ -37,20 +37,71 @@ class _PinCodeSuccessScreen extends State<ChooseRoleScreen> {
                 return Center(child: _loadingProgressIndicatorStateWidget());
               } else if (state is SuccessChooseState) {
                 return Column(
-                    children: const [
-                      Center(
-                        child: Text("Success"),
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Role:",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Text(
+                            state.role,
+                            style: const TextStyle(fontSize: 16),
+                          )
+                        ],
                       ),
-                      Card(
-                        child: Text("Event 1"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      child: Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(114, 178, 238, 1),
+                            borderRadius: BorderRadius.all(Radius.circular(8))),
+                        child: const Center(
+                          child: Text(
+                            "Event 1",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
                       ),
-                      Card(
-                        child: Text("Event 2"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      child: Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(114, 178, 238, 1),
+                            borderRadius: BorderRadius.all(Radius.circular(8))),
+                        child: const Center(
+                          child: Text(
+                            "Event 2",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
                       ),
-                      Card(
-                        child: Text("Event 3"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      child: Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(114, 178, 238, 1),
+                            borderRadius: BorderRadius.all(Radius.circular(8))),
+                        child: const Center(
+                          child: Text(
+                            "Event 3",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
                       ),
-                    ],
+                    ),
+                  ],
                 );
               } else if (state is UserTokenEmptyChooseState) {
                 return const NftEmptyScreen();
@@ -62,7 +113,7 @@ class _PinCodeSuccessScreen extends State<ChooseRoleScreen> {
                 return Column(
                   children: [
                     Center(
-                      child: Text("Refresh success ${state.role}"),
+                      child: Text("Success ${state.role}"),
                     ),
                     const Card(
                       child: Text("Event 1"),

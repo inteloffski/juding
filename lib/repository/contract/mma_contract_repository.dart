@@ -1,5 +1,5 @@
 abstract class MmaContractRepository {
   Future<String> mint(int role);
 
-  Future<String> cardInfo(int tokenId);
+  Future<List<dynamic>> cardInfo(int tokenId);
 }

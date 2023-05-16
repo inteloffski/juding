@@ -52,7 +52,7 @@ class _NftEmptyScreenState extends State<NftEmptyScreen> {
             child: Wrap(
               spacing: 24.0,
               children: List<Widget>.generate(
-                2,
+                3,
                 (int index) {
                   return ChoiceChip(
                     disabledColor: fillColor,
@@ -60,8 +60,8 @@ class _NftEmptyScreenState extends State<NftEmptyScreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     label: SizedBox(
-                        width: 150,
-                        height: 150,
+                        width: 60,
+                        height: 60,
                         child: Center(child: _titleFromIndex(index))),
                     selected: _value == index,
                     onSelected: (bool selected) {
@@ -129,9 +129,11 @@ class _NftEmptyScreenState extends State<NftEmptyScreen> {
 
   Widget _titleFromIndex(int index) {
     if (index == 0) {
-      return Text('choose_role_screen.role_judging'.tr());
+      return Text('choose_role_screen.role_fighter'.tr());
+    } else if (index == 1){
+      return Text('choose_role_screen.role_fan'.tr());
     } else {
-      return Text('choose_role_screen.role_candidate'.tr());
+      return Text('choose_role_screen.role_judge'.tr());
     }
   }
 

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:juding/presentation/chooserole/bloc/choose_role_event.dart';
 import 'package:juding/presentation/chooserole/bloc/choose_role_state.dart';
@@ -21,11 +23,13 @@ class ChooseRoleBloc extends Bloc<ChooseRoleEvent, ChooseRoleState> {
       try {
         NftsMoralisDto nftsMoralisDto = await moralisRepository
             .fetchNftFromAddress(sessionRepository.address!);
-        final num tokenId = num.parse(nftsMoralisDto.result.first.tokenId);
-        String t = await mmaContractRepository.cardInfo(tokenId.toInt());
+
 
         if (nftsMoralisDto.result.isNotEmpty) {
-          emit(SuccessChooseState(nftsMoralisDto));
+          final num tokenId = num.parse(nftsMoralisDto.result.first.tokenId);
+          final List<dynamic> _tokenId = await mmaContractRepository.cardInfo(tokenId.toInt());
+          final String role = _convertIdToRole(_tokenId.first);
+          emit(SuccessChooseState(role));
         } else {
           emit(UserTokenEmptyChooseState());
         }
@@ -39,15 +43,29 @@ class ChooseRoleBloc extends Bloc<ChooseRoleEvent, ChooseRoleState> {
       try {
         NftsMoralisDto nftsMoralisDto = await moralisRepository.fetchNftFromAddress(sessionRepository.address!);
         final num tokenId = num.parse(nftsMoralisDto.result.first.tokenId);
-        final String t = await mmaContractRepository.cardInfo(tokenId.toInt());
+        final List<dynamic> t = await mmaContractRepository.cardInfo(tokenId.toInt());
+        final String role = _convertIdToRole(t.first) ;
         emit(
           RefreshAfterMintingSuccessState(
-            role: event.role,
+            role: role,
           ),
         );
       } catch (e) {
         emit(RefreshAfterMintingErrorState(e.toString()));
       }
     });
+  }
+
+  //Fighter 0
+  // Fan 1
+  // Judge 2
+  String _convertIdToRole(BigInt tokenId){
+    if(tokenId == BigInt.from(0)){
+      return "Fighter";
+    } else if(tokenId == BigInt.from(0)){
+      return "Fan";
+    } else {
+      return "Judge";
+    }
   }
 }

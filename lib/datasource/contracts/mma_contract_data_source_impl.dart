@@ -36,7 +36,7 @@ class MmaContractDataSourceImpl extends MmaContractDataSource {
   }
 
   @override
-  Future<String> cardInfo(String privateKey, int tokenId) async {
+  Future<List<dynamic>> cardInfo(String privateKey, int tokenId) async {
     const String cardInfoFunctionFromContract = "cardInfo";
     String localPathContract = await rootBundle.loadString("assets/contracts/mma_contract.json");
     const String contractName = "MMARoleNFT";
@@ -48,14 +48,10 @@ class MmaContractDataSourceImpl extends MmaContractDataSource {
     );
     final Credentials credentials = EthPrivateKey.fromHex(privateKey);
 
-    return await web3client.sendTransaction(
-        credentials,
-        Transaction.callContract(
-          contract: contract,
-          function: contract.function(cardInfoFunctionFromContract),
-          parameters: [BigInt.from(tokenId)],
-        ),
-        chainId: chainId
+    return await web3client.call(
+        contract: contract,
+        function: contract.function(cardInfoFunctionFromContract),
+        params: [BigInt.from(tokenId)],
     );
   }
 }
