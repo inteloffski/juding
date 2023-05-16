@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:juding/presentation/registerwallet/twentywords/cubit/twenty_words_state.dart';
 
-import '../../../../repository/register_repository.dart';
+import '../../../../repository/register/register_repository.dart';
 
 
 class TwentyWordsCubit extends Cubit<TwentyWordsState> {

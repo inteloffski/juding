@@ -44,7 +44,6 @@ class CreateNewWalletScreen extends StatelessWidget {
 
   Widget _imageWallet() {
     return Center(
-      child: SvgPicture.asset('assets/ic_nft_app_logo.svg'),
     );
   }
 

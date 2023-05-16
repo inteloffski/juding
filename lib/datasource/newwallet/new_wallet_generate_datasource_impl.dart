@@ -7,6 +7,11 @@ import 'package:convert/convert.dart';
 class NewWalletGenerateDataSourceImpl implements NewWalletGenerateDataSource {
  // static String privateKey = "";
   final String _path = "m/44'/60'/0'/1'/0'";
+  String? _privateKey;
+
+  @override
+  // TODO: implement privateKey
+  String? get privateKey => _privateKey;
 
   @override
   Future<List<String>> generateBip39() async {
@@ -18,7 +23,8 @@ class NewWalletGenerateDataSourceImpl implements NewWalletGenerateDataSource {
     String seed = bip39.mnemonicToSeedHex(mnemonic);
     List<int> seedBytes = hex.decode(seed);
     KeyData master = await ED25519_HD_KEY.derivePath(_path, seedBytes);
-    return hex.encode(master.key);
+    _privateKey = hex.encode(master.key);
+    return _privateKey ?? "";
   }
 
   @override
