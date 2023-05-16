@@ -17,6 +17,10 @@ class ChooseRoleScreen extends StatefulWidget {
 }
 
 class _PinCodeSuccessScreen extends State<ChooseRoleScreen> {
+  bool isCheck1 = false;
+  bool isCheck2 = false;
+  bool isCheck3 = false;
+
   @override
   Widget build(BuildContext context) {
     final ChooseRoleBloc bloc = serviceLocator();
@@ -54,52 +58,100 @@ class _PinCodeSuccessScreen extends State<ChooseRoleScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 16),
                       child: Container(
-                        width: double.infinity,
-                        height: 60,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(114, 178, 238, 1),
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: const Center(
-                          child: Text(
-                            "Event 1",
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
+                          width: double.infinity,
+                          height: 120,
+                          decoration: const BoxDecoration(
+                              color: Color.fromRGBO(114, 178, 238, 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8, top: 8),
+                                child: Text(
+                                  "Title 1",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                              Row(children: [
+                                const Text("Register for the event"),
+                                Checkbox(
+                                    value: isCheck1,
+                                    onChanged: (b) => {
+                                      setState(() {
+                                        isCheck1 = b!;
+                                      })
+                                    }),
+                              ])
+                            ],
+                          )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 16),
                       child: Container(
-                        width: double.infinity,
-                        height: 60,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(114, 178, 238, 1),
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: const Center(
-                          child: Text(
-                            "Event 2",
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
+                          width: double.infinity,
+                          height: 120,
+                          decoration: const BoxDecoration(
+                              color: Color.fromRGBO(114, 178, 238, 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8, top: 8),
+                                child: Text(
+                                  "Title 2",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                              Row(children: [
+                                const Text("Register for the event"),
+                                Checkbox(
+                                    value: isCheck2,
+                                    onChanged: (b) => {
+                                      setState(() {
+                                        isCheck2 = b!;
+                                      })
+                                    }),
+                              ])
+                            ],
+                          )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 16),
                       child: Container(
-                        width: double.infinity,
-                        height: 60,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(114, 178, 238, 1),
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: const Center(
-                          child: Text(
-                            "Event 3",
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
+                          width: double.infinity,
+                          height: 120,
+                          decoration: const BoxDecoration(
+                              color: Color.fromRGBO(114, 178, 238, 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8, top: 8),
+                                child: Text(
+                                  "Title 3",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                              Row(children: [
+                                const Text("Register for the event"),
+                                Checkbox(
+                                    value: isCheck3,
+                                    onChanged: (b) => {
+                                          setState(() {
+                                            isCheck3 = b!;
+                                          })
+                                        }),
+                              ])
+                            ],
+                          )),
                     ),
                   ],
                 );
